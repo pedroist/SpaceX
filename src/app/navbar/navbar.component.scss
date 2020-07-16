@@ -1,0 +1,34 @@
+@import "../../styles.scss";
+
+
+.navbar {
+    box-shadow: 0 1px 5px 0 rgba(0,0,0,.2);
+
+    .navbar-brand.title {
+        font-size: 2rem;
+        padding: 0;
+        color: $primary-green;
+    
+        &:hover {
+            color: $primary-green;
+        }
+    }
+
+    .navbar-nav .nav-link{
+        color: $gray;
+        line-height: 0.5;
+        font-size: 1.2rem;
+        font-weight: 400;
+
+        &:hover {
+            color: $dark-blue;
+        }
+    }
+}
+
+  @media (min-width: 665px) {
+
+    .navbar li {
+      margin: auto 20px;
+    }
+  }
