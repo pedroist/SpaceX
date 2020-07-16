@@ -17,6 +17,7 @@ export class LaunchesCardListComponent implements OnInit {
     details: "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.This is a wider card with supporting text below as a natural lead-in to additional contentThis is a ",
     success: true,
     classification: "Success",
+    upcoming: false,
     rocketId: "431",
     rocketName: "Rocket12",
   };
