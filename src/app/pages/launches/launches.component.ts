@@ -1,4 +1,4 @@
-import { Launch } from './../../models/Launch';
+import { ILaunch } from '../../models/ILaunch';
 import { Component, OnInit } from '@angular/core';
 import { LaunchService } from '../../services/launch.service';
 
@@ -8,7 +8,7 @@ import { LaunchService } from '../../services/launch.service';
   styleUrls: ['./launches.component.scss']
 })
 export class LaunchesComponent implements OnInit {
-  launchesList: Launch[] = [];
+  launchesList: ILaunch[] = [];
 
   constructor(private launchService: LaunchService) { }
 
@@ -17,6 +17,7 @@ export class LaunchesComponent implements OnInit {
 
     //launchesList when fetched or after get w/ localstorage is broadcasted here and to other components
     this.launchService.launchesReference.subscribe(launches => {
+      debugger;
       this.launchesList = launches;
     });
   }

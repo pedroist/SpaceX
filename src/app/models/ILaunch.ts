@@ -1,4 +1,4 @@
-export interface Launch {
+export interface ILaunch {
     id: string,
     img?: string,
     name?: string,

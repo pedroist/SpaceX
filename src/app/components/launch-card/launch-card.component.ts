@@ -1,4 +1,4 @@
-import { Launch } from './../../models/Launch';
+import { ILaunch } from '../../models/ILaunch';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./launch-card.component.scss']
 })
 export class LaunchCardComponent implements OnInit {
-  @Input() launch: Launch;
+  @Input() launch: ILaunch;
   constructor() { }
 
   ngOnInit() {

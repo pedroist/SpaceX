@@ -1,4 +1,4 @@
-import { Launch } from './../../models/Launch';
+import { ILaunch } from '../../models/ILaunch';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 
 export class LaunchesCardListComponent implements OnInit {
   /**Apagar/ */
-  dummy: Launch = {
+  dummy: ILaunch = {
     id: "1234",
     img: "https://farm5.staticflickr.com/4695/25557986177_2d315f4c11_o.jpg",
     name: "Launch à Lua",
