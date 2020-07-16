@@ -6,13 +6,15 @@ import { AppRoutingModule } from './/app-routing.module';
 import { LaunchesComponent } from './pages/launches/launches.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LaunchesCardListComponent } from './components/launches-card-list/launches-card-list.component';
+import { LaunchCardComponent } from './components/launch-card/launch-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LaunchesComponent,
     NavbarComponent,
-    LaunchesCardListComponent
+    LaunchesCardListComponent,
+    LaunchCardComponent
   ],
   imports: [
     BrowserModule,

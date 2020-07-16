@@ -1,0 +1,47 @@
+@import "../../../styles.scss";
+
+.launch-card {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: calc(.25rem - 1px);
+    border-color: $dark-blue;
+    box-shadow: 0 1px 5px 0 rgba(0,0,0,.2);
+    min-width: 70vw;
+    max-width: 70vw;
+    height: 182px; // 2 more pixels, one for each side of border
+
+    .card-img {
+        width: 180px;
+        height: 180px;
+        border-radius: calc(.2rem - 1px);
+        vertical-align: baseline;
+    }
+
+    .card-info {
+        width: calc(70vw - 182px); // 2 more pixels, one for each side of border
+        padding: 10px 10px;
+        vertical-align: top;
+        .card-info-body{
+            font-size: 13px;
+            display: block;
+            float: left;
+
+            h5 {
+                margin-bottom: 2px;
+            }
+            .card-date{
+                color: gray;
+                font-size: 14px;
+            }
+
+            .card-info-body-bottom {
+             display: flex;
+             flex-direction: row;
+             justify-content: space-around;
+             line-height: 10px;
+             font-weight: 500;   
+             line-height: .1rem;
+            }
+        }
+    }
+}
