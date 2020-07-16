@@ -36,6 +36,7 @@ export class LaunchService {
   /*---END OF HTTP REQUESTS-------------------------------------*/
 
   getLaunchesInitialization() {
+
     // checking if LaunchesList is already saved with localStorage
     let launches = JSON.parse(localStorage.getItem('launchesList'));
 
@@ -44,7 +45,7 @@ export class LaunchService {
     } else {
       this.getLaunchesHttpRequest().subscribe(data => {
 
-        data.launches.map(launch => {
+        data.map(launch => {
           if (launch) {
             //map to a Launch object (model)
             this.jsonToLaunchMapper(launch);
