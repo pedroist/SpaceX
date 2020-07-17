@@ -6,7 +6,7 @@
     <div class="col-md-8 col-sm-8">
       <div class="card-body row-md-10">
         <h5 class="card-title">{{launch.name}}</h5>
-        <div class="card-date">{{launch.date}}</div>
+        <div class="card-date">{{launch.date | date: 'medium'}}</div>
         <p class="card-text">{{launch.details}}</p>
       </div>
       <!-- <hr/> -->
