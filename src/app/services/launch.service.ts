@@ -6,6 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, BehaviorSubject, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { LaunchClass } from '../models/LaunchClass';
+import { Period } from '../Constants';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -30,21 +31,38 @@ export class LaunchService {
 
   /*---HTTP REQUESTS-------------------------------------*/
 
-  /**GET /launches
-   * Get All Launches
+  /**GET /launches or GET /launches/past or GET /launches/upcoming
+   * Get All Launches or Past Launches or Upcoming Launches
   */
-  getLaunchesHttpRequest(): Observable<any> {
+  getLaunchesHttpRequest(period: string): Observable<any> {
+    let url;
+    switch (period) {
+      case Period.ALL:
+        url = `${this.url}/launches`;
+        break;
+      case Period.PAST:
+        url = `${this.url}/launches/past`;
+        break;
+      case Period.UPCOMING:
+        url = `${this.url}/launches/upcoming`;
+        break;
+      default:
+        url = `${this.url}/launches`;
+        break;
+    }
+
     let data = this.http
-      .get(`${this.url}/launches`)
+      .get(url)
       .pipe(catchError(this.handleError));
     return data;
   }
 
   /*---END OF HTTP REQUESTS-------------------------------------*/
 
-  getLaunchesInitialization() {
+  getLaunchesInitialization(period: string) {
+    this.launchesArray = []; //Reset array before adding new objects. (In case Period Filter changed)
 
-    this.getLaunchesHttpRequest().subscribe(data => {
+    this.getLaunchesHttpRequest(period).subscribe(data => {
 
       data.map(launchJSON => {
         if (launchJSON) {
