@@ -1,9 +1,9 @@
 <div class="row mt-4 pt-4">
 
     <!-- Search bar -->
-    <div class="col-md-4">
+    <div class="col-md-4 row-4 mt-2 mb-2">
       <input type="text"
-        class="form-control w-75"
+        class="form-control w-md-75"
         name="searchTerm"
         id="searchInput"
         [(ngModel)]= "searchTerm"
@@ -14,9 +14,9 @@
     </div>
     
     <!-- Select box - Period -->
-    <div class="col-md-4">
+    <div class="col-md-4 row-4 mt-2 mb-2">
       <select
-        class="form-control w-75"
+        class="form-control w-md-75"
         [(ngModel)]="periodFilter"
         name="period"
         id="period"
@@ -29,7 +29,7 @@
     <!-- Toggle - Success Launches -->
     <mat-slide-toggle
       *ngIf="showToggleButton"
-      class="col-md-4"
+      class="col-md-4 row-4 mt-2 mb-2"
       [(ngModel)]="isSuccess"
       [color]="slideToggleButtonColor"
       (change)="toggle($event)">

@@ -70,7 +70,6 @@ export class LaunchService {
         }
       });
       // broadcast housesList to other components
-      debugger;
       this.launchesSource.next(this.launchesArray);
     });
 
