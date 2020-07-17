@@ -10,6 +10,9 @@ import { Component, OnInit, Input } from '@angular/core';
 export class LaunchesCardListComponent implements OnInit {
 
   @Input() launchesList: ILaunch[];
+  @Input() showOnlySuccess: boolean;
+  @Input() showOnlySuccessActive: boolean;
+
   constructor() { }
 
   ngOnInit() {

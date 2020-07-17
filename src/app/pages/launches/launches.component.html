@@ -4,5 +4,9 @@
     (periodFilterOut)="onPeriodFilterChange($event)"
     (successFilterOut)="onSuccessFilterChange($event)">
   </app-filter-panel>
-  <app-launches-card-list [launchesList]="launchesList"></app-launches-card-list>
+  <app-launches-card-list
+    [launchesList]="launchesList"
+    [showOnlySuccess]="showOnlySuccess"
+    [showOnlySuccessActive]="showOnlySuccessActive">
+  </app-launches-card-list>
 </div>

@@ -30,6 +30,7 @@ export class FilterPanelComponent implements OnInit {
     }
     if (this.periodFilter === Period.PAST) {
       this.showToggleButton = true;
+      this.isSuccess = true
     }
     this.periodFilterOut.emit(this.periodFilter);
   }

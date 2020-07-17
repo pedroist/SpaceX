@@ -12,6 +12,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LaunchesCardListComponent } from './components/launches-card-list/launches-card-list.component';
 import { LaunchCardComponent } from './components/launch-card/launch-card.component';
 import { FilterPanelComponent } from './filter-panel/filter-panel.component';
+import { ShowOnlySuccessPipe } from './pipes/show-only-success.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FilterPanelComponent } from './filter-panel/filter-panel.component';
     NavbarComponent,
     LaunchesCardListComponent,
     LaunchCardComponent,
-    FilterPanelComponent
+    FilterPanelComponent,
+    ShowOnlySuccessPipe
   ],
   imports: [
     BrowserModule,

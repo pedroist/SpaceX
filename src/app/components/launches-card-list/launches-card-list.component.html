@@ -1,3 +1,4 @@
-<div *ngFor="let launch of launchesList">
+<div *ngFor="let launch of (launchesList
+                | showOnlySuccess: showOnlySuccess: showOnlySuccessActive)">
     <app-launch-card [launch]="launch"></app-launch-card>
 </div>
