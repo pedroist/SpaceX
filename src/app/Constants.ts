@@ -7,3 +7,9 @@ export const Classification = {
     FAILED: "Failed",
     UPCOMING: "Upcoming"
 }
+
+export const Period = {
+    ALL: "All",
+    PAST: "Past",
+    UPCOMING: "Upcoming"
+}

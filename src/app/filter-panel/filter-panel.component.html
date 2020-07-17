@@ -1,3 +1,24 @@
-<p>
-  filter-panel works!
-</p>
+<div class="container mt-5 pt-5">
+  <h1>Filter Panel</h1>
+  <div class="row">
+    <div class="col-md-3">SearchBar</div>
+    
+    <!-- Select box - Period -->
+    <div class="col-md-3">
+      <label for="period">Period: </label>
+      <select
+        class="form-control"
+        [(ngModel)]="periodFilter"
+        name="period"
+        id="period"
+        (change)="onPeriodChange()">
+          <option *ngFor="let option of periodOptions">
+            {{option}}
+          </option>
+      </select>
+    </div>
+
+    <div class="col-md-3">More filters...</div>
+    <div class="col-md-3">Switch</div>
+  </div>
+</div>
