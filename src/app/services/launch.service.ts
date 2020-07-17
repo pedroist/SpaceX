@@ -100,20 +100,6 @@ export class LaunchService {
       launch.classification = Classification.FAILED;
     }
 
-    // fill rocket name and missing rocket images by accessing rocketAPI
-    // if (launch.rocketId) {
-    //   this.rocketService.getRocketByIdHttpRequest(launch.rocketId).subscribe(rocket => {
-    //     if (rocket) {
-    //       if (rocket.name) {
-    //         launch.rocketName = rocket.name;
-    //       }
-    //       if (!launch.img && rocket.flickr_images) {
-    //         launch.img = rocket.flickr_images;
-    //       }
-    //     }
-    //   });
-    // }
-
     return launch;
   }
 
