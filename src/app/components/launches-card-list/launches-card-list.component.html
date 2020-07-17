@@ -1,6 +1,3 @@
-<app-launch-card [launch]="dummy"></app-launch-card>
-<app-launch-card [launch]="dummy"></app-launch-card>
-<app-launch-card [launch]="dummy"></app-launch-card>
-<app-launch-card [launch]="dummy"></app-launch-card>
-<app-launch-card [launch]="dummy"></app-launch-card>
-
+<div *ngFor="let launch of launchesList">
+    <app-launch-card [launch]="launch"></app-launch-card>
+</div>

@@ -1,5 +1,5 @@
 import { ILaunch } from '../../models/ILaunch';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-launches-card-list',
@@ -8,20 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class LaunchesCardListComponent implements OnInit {
-  /**Apagar/ */
-  dummy: ILaunch = {
-    id: "1234",
-    img: "https://farm5.staticflickr.com/4695/25557986177_2d315f4c11_o.jpg",
-    name: "Launch à Lua",
-    date: new Date(),
-    details: "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.This is a wider card with supporting text below as a natural lead-in to additional contentThis is a ",
-    success: true,
-    classification: "Success",
-    upcoming: false,
-    rocketId: "431",
-    rocketName: "Rocket12",
-  };
-  /**Apagar/ */
+
+  @Input() launchesList: ILaunch[];
   constructor() { }
 
   ngOnInit() {
