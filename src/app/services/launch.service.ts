@@ -63,7 +63,6 @@ export class LaunchService {
     this.launchesArray = []; //Reset array before adding new objects. (In case Period Filter changed)
 
     this.getLaunchesHttpRequest(period).subscribe(data => {
-
       data.map(launchJSON => {
         if (launchJSON) {
           //map to a Launch object (model)
@@ -71,6 +70,7 @@ export class LaunchService {
         }
       });
       // broadcast housesList to other components
+      debugger;
       this.launchesSource.next(this.launchesArray);
     });
 

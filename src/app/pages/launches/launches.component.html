@@ -2,10 +2,11 @@
   <h1 class="mt-3">Launches</h1>
   <app-filter-panel 
     (periodFilterOut)="onPeriodFilterChange($event)"
-    (successFilterOut)="onSuccessFilterChange($event)">
+    (successFilterOut)="onSuccessFilterChange($event)"
+    (searchTermOut)="onSearchTermChange($event)">
   </app-filter-panel>
   <app-launches-card-list
-    [launchesList]="launchesList"
+    [launchesList]="searchResults.length > 0 ? searchResults: launchesList"
     [showOnlySuccess]="showOnlySuccess"
     [showOnlySuccessActive]="showOnlySuccessActive">
   </app-launches-card-list>

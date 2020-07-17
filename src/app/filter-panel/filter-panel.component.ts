@@ -16,12 +16,17 @@ export class FilterPanelComponent implements OnInit {
   isSuccess: boolean = true;
   showToggleButton: boolean = false;
 
+  searchTerm: string;
+
   @Output() periodFilterOut: EventEmitter<string> = new EventEmitter();
   @Output() successFilterOut: EventEmitter<boolean> = new EventEmitter();
-
+  @Output() searchTermOut: EventEmitter<string> = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
+  }
+  onSearchInputChange() {
+    this.searchTermOut.emit(this.searchTerm);
   }
 
   onPeriodChange() {

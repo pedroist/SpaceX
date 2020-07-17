@@ -1,10 +1,22 @@
 <div class="row mt-4 pt-4">
-    <div class="col-md-4">SearchBar</div>
+
+    <!-- Search bar -->
+    <div class="col-md-4">
+      <input type="text"
+        class="form-control w-75"
+        name="searchTerm"
+        id="searchInput"
+        [(ngModel)]= "searchTerm"
+        (keyup)="onSearchInputChange()"
+        placeholder="Search for a launch..."
+        required
+        autocomplete="off">
+    </div>
     
     <!-- Select box - Period -->
     <div class="col-md-4">
       <select
-        class="form-control w-50"
+        class="form-control w-75"
         [(ngModel)]="periodFilter"
         name="period"
         id="period"

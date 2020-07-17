@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { LaunchService } from '../../services/launch.service';
 import { FilterService } from '../../services/filter.service';
 import { Period } from '../../Constants';
+import FuzzySearch from 'fuzzy-search'; // Or: var FuzzySearch = require('fuzzy-search');
 
 
 @Component({
@@ -12,6 +13,10 @@ import { Period } from '../../Constants';
 })
 export class LaunchesComponent implements OnInit {
   launchesList: ILaunch[] = [];
+
+  searchResults: ILaunch[] = [];
+  searchTerm: string;
+
   period: string = Period.ALL;
   showOnlySuccess: boolean = true;
   showOnlySuccessActive: boolean = false;
@@ -36,15 +41,33 @@ export class LaunchesComponent implements OnInit {
       } else {
         this.showOnlySuccessActive = false;
       }
+      if (this.searchTerm) {
+        this.executeSearch();
+      }
     });
   }
 
   onPeriodFilterChange(period: string) {
     this.period = period;
+    //this.searchTerm = "";
+    this.searchResults = [];
     this.launchService.getLaunchesInitialization(this.period);
   }
 
   onSuccessFilterChange(isSuccess: boolean) {
     this.showOnlySuccess = isSuccess;
+  }
+
+  onSearchTermChange(searchTerm: string) {
+    this.searchTerm = searchTerm;
+    this.executeSearch();
+  }
+
+  executeSearch() {
+    const searcher = new FuzzySearch(this.launchesList, ['name'], {
+      caseSensitive: false,
+    });
+    this.searchResults = searcher.search(this.searchTerm);
+
   }
 }

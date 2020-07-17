@@ -12,7 +12,8 @@ $theme-colors: (
     "primary-green": $primary-green,
     "secondary-green": $secondary-green,
     "dark-blue": $dark-blue,
-    "turkey-blue": #249eacd4
+    "turkey-blue": rgb(36, 158, 172),
+    "turkey-blue-transparent": #249eacd4
 );
 @import "node_modules/bootstrap/scss/bootstrap";
 
