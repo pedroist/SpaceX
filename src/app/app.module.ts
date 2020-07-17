@@ -8,6 +8,7 @@ import { LaunchesComponent } from './pages/launches/launches.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LaunchesCardListComponent } from './components/launches-card-list/launches-card-list.component';
 import { LaunchCardComponent } from './components/launch-card/launch-card.component';
+import { FilterPanelComponent } from './filter-panel/filter-panel.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { LaunchCardComponent } from './components/launch-card/launch-card.compon
     LaunchesComponent,
     NavbarComponent,
     LaunchesCardListComponent,
-    LaunchCardComponent
+    LaunchCardComponent,
+    FilterPanelComponent
   ],
   imports: [
     BrowserModule,
