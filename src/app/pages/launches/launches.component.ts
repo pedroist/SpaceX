@@ -21,4 +21,8 @@ export class LaunchesComponent implements OnInit {
     });
   }
 
+  onPeriodFilterChange(period: string) {
+    console.log(period);
+  }
+
 }

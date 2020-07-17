@@ -11,7 +11,7 @@ export class FilterPanelComponent implements OnInit {
   periodFilter: string = "All";
   periodOptions: string[] = [Period.ALL, Period.PAST, Period.UPCOMING];
 
-  @Output() period: EventEmitter<string> = new EventEmitter();
+  @Output() periodFilterOut: EventEmitter<string> = new EventEmitter();
 
   constructor() { }
 
@@ -19,6 +19,6 @@ export class FilterPanelComponent implements OnInit {
   }
 
   onPeriodChange() {
-    this.period.emit(this.periodFilter);
+    this.periodFilterOut.emit(this.periodFilter);
   }
 }
