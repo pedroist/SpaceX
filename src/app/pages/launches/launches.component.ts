@@ -2,6 +2,7 @@ import { ILaunch } from '../../models/ILaunch';
 import { Component, OnInit } from '@angular/core';
 import { LaunchService } from '../../services/launch.service';
 import { Period } from '../../Constants';
+import { MatSlideToggleChange } from '@angular/material';
 
 @Component({
   selector: 'app-launches',
@@ -19,7 +20,6 @@ export class LaunchesComponent implements OnInit {
 
     //launchesList when fetched or after get w/ localstorage is broadcasted here and to other components
     this.launchService.launchesReference.subscribe(launches => {
-      console.log(launches);
       this.launchesList = [];
       this.launchesList = launches;
     });
@@ -27,7 +27,10 @@ export class LaunchesComponent implements OnInit {
 
   onPeriodFilterChange(period: string) {
     this.period = period;
-    this.launchService.getLaunchesInitialization(period);
+    this.launchService.getLaunchesInitialization(this.period);
   }
 
+  onSuccessFilterChange(isSuccess: boolean) {
+    ///DOOOO SOMETHING
+  }
 }

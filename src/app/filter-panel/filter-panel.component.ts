@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Period } from '../Constants';
+import { MatSlideToggleChange } from '@angular/material';
 
 
 @Component({
@@ -11,7 +12,12 @@ export class FilterPanelComponent implements OnInit {
   periodFilter: string = "All";
   periodOptions: string[] = [Period.ALL, Period.PAST, Period.UPCOMING];
 
+  slideToggleButtonColor: string = "primary";
+  isSuccess: boolean = true;
+  showToggleButton: boolean = false;
+
   @Output() periodFilterOut: EventEmitter<string> = new EventEmitter();
+  @Output() successFilterOut: EventEmitter<boolean> = new EventEmitter();
 
   constructor() { }
 
@@ -19,6 +25,17 @@ export class FilterPanelComponent implements OnInit {
   }
 
   onPeriodChange() {
+    if (this.periodFilter === Period.ALL || this.periodFilter === Period.UPCOMING) {
+      this.showToggleButton = false;
+    }
+    if (this.periodFilter === Period.PAST) {
+      this.showToggleButton = true;
+    }
     this.periodFilterOut.emit(this.periodFilter);
+  }
+
+  toggle(event: MatSlideToggleChange) {
+    // Here we emit to the Launches Component the value of the matsidetoggle (boolean for success launches or not)
+    this.successFilterOut.emit(event.checked);
   }
 }

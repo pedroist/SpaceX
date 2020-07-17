@@ -1,8 +1,8 @@
 <div class="row mt-4 pt-4">
-    <div class="col-md-3">SearchBar</div>
+    <div class="col-md-4">SearchBar</div>
     
     <!-- Select box - Period -->
-    <div class="col-md-3">
+    <div class="col-md-4">
       <label for="period">Period: </label>
       <select
         class="form-control"
@@ -15,7 +15,14 @@
           </option>
       </select>
     </div>
-
-    <div class="col-md-3">More filters...</div>
-    <div class="col-md-3">Switch</div>
+    <!-- Toggle - Success Launches -->
+    <mat-slide-toggle
+      *ngIf="showToggleButton"
+      class="col-md-4"
+      [(ngModel)]="isSuccess"
+      [color]="slideToggleButtonColor"
+      (change)="toggle($event)">
+        <span *ngIf="isSuccess">Success Launches</span>
+        <span *ngIf="!isSuccess">Failed Launches</span>
+    </mat-slide-toggle>
   </div>

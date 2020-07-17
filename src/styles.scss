@@ -11,6 +11,19 @@ $dark-blue: #1D0047;
 $theme-colors: (
     "primary-green": $primary-green,
     "secondary-green": $secondary-green,
-    "dark-blue": $dark-blue
+    "dark-blue": $dark-blue,
+    "turkey-blue": #249eacd4
 );
 @import "node_modules/bootstrap/scss/bootstrap";
+
+//Angular Material theme override
+@import '~@angular/material/theming';
+@include mat-core();
+@import './material-themes/turkey-blue-palette.scss';
+
+$custom-theme-primary: mat-palette($mat-turkey-blue);
+$custom-theme-accent: mat-palette($mat-orange, A200, A100, A400);
+$custom-theme-warn: mat-palette($mat-red);
+
+$custom-theme: mat-light-theme($custom-theme-primary, $custom-theme-accent, $custom-theme-warn);
+@include angular-material-theme($custom-theme);
