@@ -17,7 +17,6 @@ export class LaunchesComponent implements OnInit {
 
     //launchesList when fetched or after get w/ localstorage is broadcasted here and to other components
     this.launchService.launchesReference.subscribe(launches => {
-      debugger;
       this.launchesList = launches;
     });
   }

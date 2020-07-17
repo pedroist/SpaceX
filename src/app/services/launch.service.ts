@@ -44,30 +44,18 @@ export class LaunchService {
 
   getLaunchesInitialization() {
 
-    // checking if LaunchesList is already saved with localStorage
-    let launches = JSON.parse(localStorage.getItem('launchesList'));
+    this.getLaunchesHttpRequest().subscribe(data => {
 
-    if (launches) {
-      this.launchesSource.next(launches);
-    } else {
-      this.getLaunchesHttpRequest().subscribe(data => {
-
-        data.map(launchJSON => {
-          if (launchJSON) {
-            //map to a Launch object (model)
-            this.launchesArray.push(this.jsonToLaunchMapper(launchJSON));
-          }
-        });
-        debugger;
-        // save the launchesList with localStorage to persist this data
-        localStorage.setItem('launchesList', JSON.stringify(this.launchesArray));
-
-        // broadcast housesList to other components
-        this.launchesSource.next(this.launchesArray);
-
-        this.launchesArray = []; //reset memory
+      data.map(launchJSON => {
+        if (launchJSON) {
+          //map to a Launch object (model)
+          this.launchesArray.push(this.jsonToLaunchMapper(launchJSON));
+        }
       });
-    }
+      // broadcast housesList to other components
+      this.launchesSource.next(this.launchesArray);
+    });
+
   }
 
   jsonToLaunchMapper(launchJSON: any): ILaunch {
@@ -113,18 +101,18 @@ export class LaunchService {
     }
 
     // fill rocket name and missing rocket images by accessing rocketAPI
-    if (launch.rocketId) {
-      this.rocketService.getRocketByIdHttpRequest(launch.rocketId).subscribe(rocket => {
-        if (rocket) {
-          if (rocket.name) {
-            launch.rocketName = rocket.name;
-          }
-          if (!launch.img && rocket.flickr_images) {
-            launch.img = rocket.flickr_images;
-          }
-        }
-      });
-    }
+    // if (launch.rocketId) {
+    //   this.rocketService.getRocketByIdHttpRequest(launch.rocketId).subscribe(rocket => {
+    //     if (rocket) {
+    //       if (rocket.name) {
+    //         launch.rocketName = rocket.name;
+    //       }
+    //       if (!launch.img && rocket.flickr_images) {
+    //         launch.img = rocket.flickr_images;
+    //       }
+    //     }
+    //   });
+    // }
 
     return launch;
   }
