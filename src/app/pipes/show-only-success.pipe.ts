@@ -7,7 +7,6 @@ import { ILaunch } from '../models/ILaunch';
 export class ShowOnlySuccessPipe implements PipeTransform {
 
   transform(launches: ILaunch[], showOnlySuccess: boolean, showOnlySuccessActive: boolean): ILaunch[] {
-    debugger;
     if (!showOnlySuccessActive) {
       return launches;
     }

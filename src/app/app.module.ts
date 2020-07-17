@@ -13,6 +13,7 @@ import { LaunchesCardListComponent } from './components/launches-card-list/launc
 import { LaunchCardComponent } from './components/launch-card/launch-card.component';
 import { FilterPanelComponent } from './filter-panel/filter-panel.component';
 import { ShowOnlySuccessPipe } from './pipes/show-only-success.pipe';
+import { RocketsComponent } from './pages/rockets/rockets.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ShowOnlySuccessPipe } from './pipes/show-only-success.pipe';
     LaunchesCardListComponent,
     LaunchCardComponent,
     FilterPanelComponent,
-    ShowOnlySuccessPipe
+    ShowOnlySuccessPipe,
+    RocketsComponent
   ],
   imports: [
     BrowserModule,

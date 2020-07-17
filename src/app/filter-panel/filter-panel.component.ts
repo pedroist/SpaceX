@@ -9,7 +9,7 @@ import { MatSlideToggleChange } from '@angular/material';
   styleUrls: ['./filter-panel.component.scss']
 })
 export class FilterPanelComponent implements OnInit {
-  periodFilter: string = "All";
+  periodFilter: string = Period.ALL;
   periodOptions: string[] = [Period.ALL, Period.PAST, Period.UPCOMING];
 
   slideToggleButtonColor: string = "primary";

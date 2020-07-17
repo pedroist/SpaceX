@@ -9,7 +9,7 @@ export const Classification = {
 }
 
 export const Period = {
-    ALL: "All",
+    ALL: "All Periods",
     PAST: "Past",
     UPCOMING: "Upcoming"
 }

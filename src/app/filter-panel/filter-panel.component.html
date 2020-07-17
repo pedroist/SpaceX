@@ -3,9 +3,8 @@
     
     <!-- Select box - Period -->
     <div class="col-md-4">
-      <label for="period">Period: </label>
       <select
-        class="form-control"
+        class="form-control w-50"
         [(ngModel)]="periodFilter"
         name="period"
         id="period"
@@ -22,7 +21,7 @@
       [(ngModel)]="isSuccess"
       [color]="slideToggleButtonColor"
       (change)="toggle($event)">
-        <span *ngIf="isSuccess">Success Launches</span>
-        <span *ngIf="!isSuccess">Failed Launches</span>
+        <span *ngIf="isSuccess">Success Launch</span>
+        <span *ngIf="!isSuccess">Failed Launch</span>
     </mat-slide-toggle>
   </div>
