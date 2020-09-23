@@ -1,19 +1,18 @@
-<div class="card launch-card mt-4 mb-4 mx-5 mx-md-0">
-  <div class="row no-gutters">
-    <div class="col-md-4 col-sm-4">
-        <img class="d-inline-block" src="{{launch.img}}" class="card-img" alt="Launch Image">
+<div class="card">
+  <!-- <div class="col-md-4 col-sm-4">
+      <img class="d-inline-block" src="{{launch.img}}" class="card-img" alt="Launch Image">
+  </div> -->
+  <div class="card-img" [ngStyle]="currentStyles"></div>
+  <div class="card-content">
+    <div class="card-body">
+      <h5 class="card-title">{{launch.name}}</h5>
+      <div class="card-subtitle">{{launch.date | date: 'medium'}}</div>
+      <div class="card-description">{{launch.details}}</div>
     </div>
-    <div class="col-md-8 col-sm-8">
-      <div class="card-body body row-md-10">
-        <h5 class="card-title">{{launch.name}}</h5>
-        <div class="card-date">{{launch.date | date: 'medium'}}</div>
-        <p class="card-text">{{launch.details}}</p>
-      </div>
-      <!-- <hr/> -->
-      <div class="footer row-md-2 mt-5 pt-2">
-          <div>{{launch.classification}}</div>
-          <div>{{launch.rocketName}}</div>
-      </div>
+    <!-- <hr/> -->
+    <div class="card-footer">
+        <div class="card-footer-info">{{launch.classification}}</div>
+        <div class="card-footer-info">{{launch.rocketName}}</div>
     </div>
   </div>
 </div>

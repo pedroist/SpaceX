@@ -1,29 +1,106 @@
-.launch-card {
-    box-shadow: 0 1px 5px 0 rgba(0,0,0,.2);
-    max-width: 70vw;
-    h5 {
-        margin-bottom: 2px;
+.card {
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    height: 250px;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: row;
+  
+    @media only screen and (max-width: 768px) {
+      flex-direction: column;
+      max-width: 300px;
+      height: 500px;
     }
-    img {
-        height: 100%;
+  
+    &-img {
+      // background: url(https://farm9.staticflickr.com/8617/16789019815_f99a165dc5_o.jpg)
+      //   0% 50% / contain;
+      background-repeat: no-repeat !important;
+      width: 35%;
+  
+      @media only screen and (max-width: 768px) {
+        width: 100%;
+        // background: url(https://farm9.staticflickr.com/8617/16789019815_f99a165dc5_o.jpg);
+        height: 40%;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat !important;
+      }
     }
-    
-    .card-date{
-        color: gray;
-        font-size: 14px;
+  
+    &-content {
+      width: 68%;
+      display: flex;
+      flex-direction: column;
+  
+      @media only screen and (max-width: 768px) {
+        height: 52%;
+        width: 100%;
+      }
     }
-    
-    // .card-text {
-    //     //white-space: nowrap;
-    //     overflow: hidden;
-    //     text-overflow: ellipsis;
-    // }
-    .footer {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        border-top: 1px solid rgba(0,0,0,0.125);
-        font-weight: 500;
-        line-height: 2rem;
+  
+    &-body {
+      display: flex;
+      flex-direction: column;
+      height: 80%;
+      padding: 15px 20px 0;
+      margin: unset;
+
+      @media only screen and (max-width: 768px) {
+        padding: 6px 14px 9px;
+      }
+    }
+  
+    &-title {
+      height: 31px;
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin-bottom: 3px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+  
+      @media only screen and (max-width: 768px) {
+        font-size: 1.5rem;
+      }
+    }
+  
+    &-subtitle {
+      color: grey;
+      margin: 2px;
+    }
+  
+    &-description {
+        height: 120px;
+      margin-top: 2px;
+      margin-bottom: 0px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+  
+      @media only screen and (max-width: 768px) {
+        line-height: 1.4;
+        height: 175px;
+      }
+    }
+    &-footer {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: auto;
+      border-top: 1px solid grey;
+      background-color: unset;
+      padding: 0;
+      &-info {
+        margin: 0 auto;
+        padding: 6px;
+      }
+
+      @media only screen and (max-width: 768px) {
+        height: 2px;
+      }
     }
   }
+  
