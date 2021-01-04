@@ -1,9 +1,12 @@
 {
   "name": "space-x",
   "version": "0.0.0",
+  "engines": {
+    "node": ">=10.15.0"
+  },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve -o",
     "build": "ng build",
     "test": "jest",
     "test:ci": "jest --runInBand",
@@ -61,6 +64,10 @@
     "preset": "jest-preset-angular",
     "setupFilesAfterEnv": [
       "<rootDir>/src/setupJest.ts"
+    ],
+    "collectCoverage": true,
+    "coverageReporters": [
+      "text"
     ]
   }
 }
