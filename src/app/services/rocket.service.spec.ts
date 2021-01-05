@@ -24,18 +24,13 @@ describe('Service: RocketService', () => {
     let backend: HttpTestingController;
     let rocketService: RocketService;
 
-    beforeEach(
-        async(() => {
-            TestBed.configureTestingModule({
-                imports: [HttpClientTestingModule],
-                providers: [
-                    RocketService
-                ]
-            });
-        })
-    );
-
     beforeEach(() => {
+        TestBed.configureTestingModule({
+            imports: [HttpClientTestingModule],
+            providers: [
+                RocketService
+            ]
+        });
         rocketService = TestBed.get(RocketService);
         backend = TestBed.get(HttpTestingController);
     });
